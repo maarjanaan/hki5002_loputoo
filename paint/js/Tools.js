@@ -14,7 +14,6 @@ class Tools {
 	}
 
 	mouseDown(e) {
-		console.log(e);
 		let canvasPlace = document.querySelector('canvas').getBoundingClientRect();
 		let mouseX = e.clientX - canvasPlace.left;
 		let mouseY = e.clientY - canvasPlace.top;
@@ -27,15 +26,10 @@ class Tools {
 			let canvasPlace = document.querySelector('canvas').getBoundingClientRect();
 			let mouseX = e.clientX - canvasPlace.left;
 			let mouseY = e.clientY - canvasPlace.top;
-			this.canvas.context.lineTo(mouseX, mouseY);
-			this.canvas.context.lineJoin = "round"
-			this.canvas.context.lineCap = "round";
-			this.canvas.context.lineWidth = 10;
-			let gradient = this.canvas.context.createLinearGradient(0,0,0,170);
-			gradient.addColorStop(0, "pink");
-			gradient.addColorStop(1, "purple");
-			this.canvas.context.strokeStyle = gradient;
-			this.canvas.context.stroke();
+			this.canvas.context.beginPath();
+ 			this.canvas.context.fillStyle = this.color;
+ 			this.canvas.context.arc(mouseX, mouseY, this.radius, 0, 2*Math.PI);
+ 			this.canvas.context.fill();
 		}
 	}
 	
