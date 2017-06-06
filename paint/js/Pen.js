@@ -1,17 +1,12 @@
 class Pen extends Tools {
-	constructor(x, y, radius, color) {
-		this.x = x;
-		this.y = y;
-		this.radius = radius;
-		this.color = color;
-		this.context = undefined;
+	constructor(x, y, width, heigth, color) {
+		super();
+		this.width = tool.radius * 2;
+		this.heigth = tool.radius * 2;
 	}
 
-	draw(context) {
-		this.context = context;
-		this.context.beginPath();
-		this.context.fillStyle = this.color;
-		this.context.arc(this.x, this.y, this.radius, 0, 2*Math.PI);
-		this.context.fill();
+	draw() {
+		this.canvas.context.fillStyle = this.color;
+		this.canvas.context.fillRect(this.x, this.y, this.width, this.height);
 	}
 }

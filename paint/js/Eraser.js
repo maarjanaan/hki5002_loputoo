@@ -1,15 +1,11 @@
 class Eraser extends Tools {
 	constructor(x, y, width, height) {
-		this.x = x;
-		this.y = y;
-		this.width = width;
-		this.height = height;
-		this.context = undefined;
+		super();
+		this.width = tool.radius * 2;
+		this.heigth = tool.radius * 2;
 	}
 
-	draw(context) {
-		this.context = context;
-		this.context.fillStyle = white;
-		this.context.fillRect(this.x, this.y, this.width, this.height);
+	draw() {
+		this.canvas.context.clearRect(this.x, this.y, this.width, this.height);
 	}
 }

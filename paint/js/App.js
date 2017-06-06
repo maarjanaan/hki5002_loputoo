@@ -26,6 +26,14 @@ window.onload = () => {
 		tool.color = "pink";
 	}
 
+	brush.onclick = function(){
+		brush = new Brush();
+	}
+
+	pen.onclick = function(){
+		pen = new Pen();
+	}
+
 	eraser.onclick = function(){
 		tool.color = "white";
 	}
@@ -47,10 +55,10 @@ class App {
 			appendChild(Elements.createButton('yellow', 'Kollane'));
 		document.querySelector('body').
 			appendChild(Elements.createButton('pink', 'Roosa'));
-		// document.querySelector('body').
-		// 	appendChild(Elements.createButton('brush', 'Pintsel'));
-		// document.querySelector('body').
-		// 	appendChild(Elements.createButton('pen', 'Pliiats'));
+		document.querySelector('body').
+			appendChild(Elements.createButton('brush', 'Pintsel'));
+		document.querySelector('body').
+			appendChild(Elements.createButton('pen', 'Pliiats'));
 		document.querySelector('body').
 			appendChild(Elements.createButton('eraser', 'Kustukumm'));
 		document.querySelector('body').
