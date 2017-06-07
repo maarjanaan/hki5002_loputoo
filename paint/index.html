@@ -5,13 +5,35 @@
 			<meta charset="UTF-8">
 				<script src="js/App.js"></script>
 				<script src="js/Canvas.js"></script>
-				<script src="js/Tools.js"></script>
-    			<script src="js/Elements.js"></script>
-    			<script src="js/Brush.js"></script>
-    			<script src="js/Pen.js"></script>
-    			<script src="js/Eraser.js"></script>
+				<script src="js/Eraser.js"></script>
+				<script src="js/Pen.js"></script>
+				<script src="js/Brush.js"></script>
 			<link rel="stylesheet" type="text/css" href="css/style.css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		</head>
+
 		<body>
+			<div class="container">
+				<h1>Joonistamine</h1>
+				<div class="btn-group-vertical">
+					<input type="button" class="btn" id="purple">
+					<input type="button" class="btn" id="pink">
+					<input type="button" class="btn" id="red">
+					<input type="button" class="btn" id="orange">
+					<input type="button" class="btn" id="yellow">
+					<input type="button" class="btn" id="green">
+					<input type="button" class="btn" id="teal">
+					<input type="button" class="btn" id="lightblue">
+					<input type="button" class="btn" id="blue">
+				</div>
+				<div id="canvas_div"></div>
+				<div class="btn-group-vertical">
+					<input type="button" class="btn" id="pen" value="Pen">
+					<input type="button" class="btn" id="brush" value="Brush">
+					<input type="button" class="btn" id="eraser" value="Eraser"><br>
+					<input type="range" id="range" min="10" max="100" value="10" oninput="amount.value = range.value">
+					<output name="amount" id="amount" for="range">10</output>
+				</div>
+			</div>
  		</body>
 	</html>

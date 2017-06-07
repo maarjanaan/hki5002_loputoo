@@ -1,18 +1,34 @@
-class Brush extends Tools {
-	constructor(x, y, radius, color) {
-		super();
-		// this.x = x;
-		// this.y = y;
-		// this.radius = radius;
-		// this.color = color;
-		// this.context = undefined;
+class Brush {
+	constructor(color, radius) {
+		this.x0;
+		this.y0;
+		this.x1;
+		this.y1;
+		this.radius = radius;
+		this.color = color;
+		this.context = undefined;
 	}
 
-	draw() {
-		this.canvas.context.beginPath();
-		this.canvas.context.fillStyle = this.color;
-		this.canvas.context.arc(this.x, this.y, this.radius, 0, 2*Math.PI);
-		this.canvas.context.fill();
-	}
+    change(previousX, previousY, currentX, currentY, context) {
+        this.x0 = previousX;
+		this.y0 = previousY;
+		this.x1 = currentX;
+		this.y1 = currentY;
+		this.draw(context);
+    }
 
+	draw(context) {
+        this.context = context;
+		this.context.beginPath();
+		this.context.moveTo(this.x0, this.y0);
+		this.context.lineTo(this.x1, this.y1);
+		this.context.lineCap = 'round';
+		this.context.lineJoin = 'round';
+		this.context.shadowBlur = this.radius/2;
+  		this.context.shadowColor = this.color;
+		this.context.strokeStyle = this.color;
+		this.context.lineWidth = this.radius;
+		this.context.stroke();
+		this.context.closePath();
+	}
 }

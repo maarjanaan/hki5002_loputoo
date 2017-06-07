@@ -1,67 +1,76 @@
 window.onload = () => {
-	new App();
-	tool = new Tools();
+    const app = new App();
 
-	size.onchange = function(){
-		tool.radius = size.value * 5;
-	}
+    document.querySelector('#purple')
+        .addEventListener('click', () => {
+            app.canvas.tool.color = 'purple';
+    });
 
-	red.onclick = function(){
-		tool.color = "red";
-	}
+    document.querySelector('#pink')
+        .addEventListener('click', () => {
+            app.canvas.tool.color = 'pink';
+    });
 
-	blue.onclick = function(){
-		tool.color = "blue";
-	}
+    document.querySelector('#red')
+        .addEventListener('click', () => {
+            app.canvas.tool.color = 'red';
+    });
 
-	green.onclick = function(){
-		tool.color = "green";
-	}
+    document.querySelector('#orange')
+        .addEventListener('click', () => {
+            app.canvas.tool.color = 'orange';
+    });
 
-	yellow.onclick = function(){
-		tool.color = "yellow";
-	}
+    document.querySelector('#yellow')
+        .addEventListener('click', () => {
+            app.canvas.tool.color = 'yellow';
+    });
 
-	pink.onclick = function(){
-		tool.color = "pink";
-	}
+    document.querySelector('#green')
+        .addEventListener('click', () => {
+            app.canvas.tool.color = 'green';
+    });
 
-	brush.onclick = function(){
-		brush = new Brush();
-	}
+    document.querySelector('#teal')
+        .addEventListener('click', () => {
+            app.canvas.tool.color = 'teal';
+    });
 
-	pen.onclick = function(){
-		pen = new Pen();
-	}
+    document.querySelector('#blue')
+        .addEventListener('click', () => {
+            app.canvas.tool.color = 'blue';
+    });
 
-	eraser.onclick = function(){
-		tool.color = "white";
-	}
-}
+    document.querySelector('#lightblue')
+        .addEventListener('click', () => {
+            app.canvas.tool.color = 'lightblue';
+    });
+
+    document.querySelector('#pen')
+        .addEventListener('click', () => {
+            app.canvas.tool = new Pen(app.canvas.tool.color, app.canvas.tool.radius);
+    });
+
+    document.querySelector('#brush')
+        .addEventListener('click', () => {
+            app.canvas.tool = new Brush(app.canvas.tool.color, app.canvas.tool.radius);
+    });
+
+    document.querySelector('#eraser')
+        .addEventListener('click', () => {
+            app.canvas.tool = new Eraser(app.canvas.tool.radius);
+    });
+
+    document.querySelector('#range')
+        .addEventListener('change', () => {
+            let value = document.querySelector('#range').value;
+            app.canvas.tool.radius = parseInt(value);
+        });
+
+};
 
 class App {
-	constructor() {
-		document.querySelector('body').
-			appendChild(Elements.createHeading('h1', 'Joonistamine'));
-		document.querySelector('body').
-			appendChild(Elements.createParagraph('p', 'Vali värv ja suurus. Joonista midagi ilusat!'));
-		document.querySelector('body').
-			appendChild(Elements.createButton('red', 'Punane'));
-		document.querySelector('body').
-			appendChild(Elements.createButton('blue', 'Sinine'));
-		document.querySelector('body').
-			appendChild(Elements.createButton('green', 'Roheline'));
-		document.querySelector('body').
-			appendChild(Elements.createButton('yellow', 'Kollane'));
-		document.querySelector('body').
-			appendChild(Elements.createButton('pink', 'Roosa'));
-		document.querySelector('body').
-			appendChild(Elements.createButton('brush', 'Pintsel'));
-		document.querySelector('body').
-			appendChild(Elements.createButton('pen', 'Pliiats'));
-		document.querySelector('body').
-			appendChild(Elements.createButton('eraser', 'Kustukumm'));
-		document.querySelector('body').
-			appendChild(Elements.createSlider('size', 1, 20, 3));
-	}
+    constructor() {
+        this.canvas = new Canvas(500, 500, 'board', 'canvas_div');
+    }
 }
