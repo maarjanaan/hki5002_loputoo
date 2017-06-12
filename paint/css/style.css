@@ -1,26 +1,24 @@
 
-body {
+html body {
 	margin: 0;
 	padding: 0;
+	background-color: rgba(235, 235, 235, 1.00);
 	text-align: center;
 }
 
 * {
 	font-family: Helvetica, Arial, sans-serif;
-	color: #0D4963;
-	font-size: 14px;
+	color: #202020;
 }
 
-h1 {
-	font-size: 16px;
+html h1 {
+	font-size: 22px;
 	font-style: bold;
-	padding: 0px 0px 15px 0px;
+	padding: 5px 0px 15px 0px;
 }
 
-p {
-	font-size: 14px;
-	font-style: normal;
-	padding: 0px;
+html a {
+	color: #202020;
 }
 
 canvas {
@@ -43,6 +41,7 @@ canvas {
 .btn-group-vertical {
 	margin: 0px;
 	vertical-align: middle;
+	
 }
 
 #canvas_div {
@@ -51,26 +50,47 @@ canvas {
 }
 
 #range {
-	margin-top: 100px;
-	transform: rotate(270deg)
+	width: 105px;
+	position: absolute;	
+	margin-top: 50px;
+	transform: rotate(270deg);
 }
 
 #amount {
-	margin-top: 70px;
+	margin-top: 40px;
 }
 
-#pen, #brush, #eraser {
+#pen, #brush, #eraser, #save {
+	background: white;
 	width: 50px;
 	height: 50px;
 	margin: 2px;
 	padding: 0;
-	color: 'black';
+	border-radius: 0;
+	border-color: black;
 }
 
- #purple, #pink, #red, #orange, #yellow, #green, #teal, #blue, #lightblue {
+#pen {
+	background: url('../img/pen.svg') no-repeat;
+}
+
+#brush {
+	background: url('../img/brush2.svg') no-repeat;
+}
+
+#eraser {
+	background: url('../img/eraser.svg') no-repeat;
+}
+
+#save {
+	background: url('../img/save.svg') no-repeat;
+}
+
+#purple, #pink, #red, #orange, #yellow, #green, #teal, #blue, #lightblue {
 	width: 50px;
 	height: 50px;
 	margin: 2px;
+	border-radius: 0;
 }
 
 #purple {

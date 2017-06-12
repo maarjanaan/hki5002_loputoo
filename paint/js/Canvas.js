@@ -16,6 +16,7 @@ class Canvas {
             .appendChild(this.canvas);
         this.canvas.addEventListener('mousedown', this.mouseDown.bind(this));
         this.canvas.addEventListener('mouseup', this.mouseUp.bind(this));
+        this.canvas.addEventListener('mouseout', this.mouseUp.bind(this));
         this.canvas.addEventListener('mousemove', this.mouseMove.bind(this));
     }
 

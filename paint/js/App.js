@@ -67,10 +67,24 @@ window.onload = () => {
             app.canvas.tool.radius = parseInt(value);
         });
 
+    document.querySelector('#save')
+        .addEventListener('click', () => {
+            const canvas = document.querySelector('#board');
+            const dataUrl = canvas.toDataURL();
+
+            const link = document.querySelector('#download');
+
+            link.addEventListener('click', e => {
+                link.href = dataUrl;
+                link.download = 'drawing.jpeg'
+            }, false);
+
+        }, false);
+
 };
 
 class App {
     constructor() {
-        this.canvas = new Canvas(500, 500, 'board', 'canvas_div');
+        this.canvas = new Canvas(700, 500, 'board', 'canvas_div');
     }
 }
