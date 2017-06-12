@@ -31,11 +31,6 @@ window.onload = () => {
             app.canvas.tool.color = 'green';
     });
 
-    document.querySelector('#teal')
-        .addEventListener('click', () => {
-            app.canvas.tool.color = 'teal';
-    });
-
     document.querySelector('#blue')
         .addEventListener('click', () => {
             app.canvas.tool.color = 'blue';
@@ -44,6 +39,11 @@ window.onload = () => {
     document.querySelector('#lightblue')
         .addEventListener('click', () => {
             app.canvas.tool.color = 'lightblue';
+    });
+
+    document.querySelector('#black')
+        .addEventListener('click', () => {
+            app.canvas.tool.color = 'black';
     });
 
     document.querySelector('#pen')
@@ -67,10 +67,19 @@ window.onload = () => {
             app.canvas.tool.radius = parseInt(value);
         });
 
-    document.querySelector('#save')
+document.querySelector('#save')
         .addEventListener('click', () => {
             const canvas = document.querySelector('#board');
-            const dataUrl = canvas.toDataURL();
+            const imageCanvas = document.createElement('canvas');
+            imageCanvas.width = canvas.width;
+            imageCanvas.height = canvas.height;
+            const imageContext = imageCanvas.getContext('2d');
+
+            imageContext.fillStyle = '#FFF';
+            imageContext.fillRect(0, 0, imageCanvas.width, imageCanvas.height);
+            imageContext.drawImage(canvas, 0, 0);
+
+            const dataUrl = imageCanvas.toDataURL();
 
             const link = document.querySelector('#download');
 

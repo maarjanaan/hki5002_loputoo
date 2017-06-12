@@ -86,7 +86,7 @@ canvas {
 	background: url('../img/save.svg') no-repeat;
 }
 
-#purple, #pink, #red, #orange, #yellow, #green, #teal, #blue, #lightblue {
+#purple, #pink, #red, #orange, #yellow, #green, #blue, #lightblue, #black {
 	width: 50px;
 	height: 50px;
 	margin: 2px;
@@ -117,14 +117,14 @@ canvas {
 	background: green;
 }
 
-#teal {
-	background: teal;
+#lightblue {
+	background: lightblue;
 }
 
 #blue {
 	background: blue;
 }
 
-#lightblue {
-	background: lightblue;
+#black {
+	background: black;
 }
