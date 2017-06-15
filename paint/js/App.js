@@ -67,7 +67,7 @@ window.onload = () => {
             app.canvas.tool.radius = parseInt(value);
         });
 
-document.querySelector('#save')
+    document.querySelector('#save')
         .addEventListener('click', () => {
             const canvas = document.querySelector('#board');
             const imageCanvas = document.createElement('canvas');
